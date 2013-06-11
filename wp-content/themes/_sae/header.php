@@ -31,15 +31,13 @@
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 		</div>
 
-    <div id="widget-cabecera" class="widget-area" role="complementary">
+    <img src="<?php bloginfo( 'template_url' ); ?>/img/cabecera_ubicacion.gif" alt="Portal de la Junta de Andalucía" title="Portal de la Junta de Andalucía" class="fright" />
+
+    <div id="widget-cabecera" class="widget-area fright" role="complementary">
       <?php if ( ! dynamic_sidebar( 'header-widget' ) ) : ?>
         
       <?php endif; // end sidebar widget area ?>
     </div><!-- #widget-cabecera -->
-
-    <div class="search-wrap">
-      <?php get_search_form( $echo ); ?>
-    </div><!-- /.search.wrap -->
 
 		<nav id="site-navigation" class="navigation-main" role="navigation">
 			<h1 class="menu-toggle"><?php _e( 'Menu', '_sae' ); ?></h1>

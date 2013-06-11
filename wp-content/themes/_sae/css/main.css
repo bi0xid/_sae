@@ -1,4 +1,8 @@
-body { font: normal 115%/1.5em Verdana, Geneva, sans-serif; }
+body {
+  font: normal 115%/1.5em Verdana, Geneva, sans-serif;
+  color: #444;
+  background: transparent url(../img/background.png) top left repeat-x;
+}
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'TeXGyreHerosCnBold';
@@ -13,12 +17,17 @@ h4 { font-size: 1.8em; }
 h5 { font-size: 1.65em; }
 h6 { font-size: 1.5em; }
 
+.fleft { float: left; }
+.fright { float: right; }
+
 #page {
   max-width: 960px;
   margin: 0 auto;
 }
 
 #masthead { overflow: hidden; }
+
+  #masthead img.fright { margin-right: 5px; }
 
 .site-branding {
   overflow: hidden;
@@ -44,6 +53,68 @@ h6 { font-size: 1.5em; }
     line-height: 550em;
   }
 
-.search-wrap {
-  float: right;
+  .widget_search .submit {
+    display: block;
+    float: left;
+    margin-top: 8px;
+    background: transparent url(../img/sprite-input-search.jpg) 0 0 no-repeat;;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    height: 32px;
+    width: 39px;
+    text-indent: -9999px;
+    cursor: pointer;
+    -webkit-appearance: none;
+  }
+
+  form#searchform {
+    width: 282px;
+    min-height: 47px;
+    background: transparent url(../img/back-search.png) 0 0 no-repeat;
+    overflow: hidden;
+  }
+
+    form#searchform input.field {
+      border-radius: 0;
+      border-color: #d4d4d4;
+      margin: 0;
+      display: block;
+      float: left;
+      margin: 8px 0 0 8px;
+      width: 76%;
+      height: 24px;
+    }
+
+#main {
+  overflow: hidden;
+  padding-top: 25px;
 }
+
+  #main #primary {
+    width: 72.5%;
+    float: left;
+  }
+
+  #main #secondary {
+    width: 25%;
+    float: right;
+  }
+
+#site-navigation ul {
+  font-family: 'TeXGyreHerosCnRegular';
+  overflow: hidden;
+  clear: both;
+  margin-top: 20px;
+}
+
+  #site-navigation ul li {}
+
+    #site-navigation ul li a {
+      color: #333;
+      font-size: 1.65em;
+      line-height: 30px;
+      padding-right: 25px;
+    }
