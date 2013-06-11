@@ -1,0 +1,49 @@
+body { font: normal 115%/1.5em Verdana, Geneva, sans-serif; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'TeXGyreHerosCnBold';
+  line-height: 45px;
+  clear: none;
+}
+
+h1 { font-size: 2.25em; }
+h2 { font-size: 2.15em; }
+h3 { font-size: 2em; }
+h4 { font-size: 1.8em; }
+h5 { font-size: 1.65em; }
+h6 { font-size: 1.5em; }
+
+#page {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+#masthead { overflow: hidden; }
+
+.site-branding {
+  overflow: hidden;
+  float: left;
+}
+
+  .site-branding h1 { float: left; }
+
+    .site-branding h1 a {
+      display: block;
+      width: 120px;
+      height: 109px;
+      text-indent: -9999px;
+      background: transparent url(../img/logo.png) 0 0 no-repeat;
+    }
+
+  .site-branding h2 {
+    float: left;
+    width: 475px;
+    height: 92px;
+    background: transparent url(../img/logo-texto.gif) 0 0 no-repeat;
+    overflow: hidden;
+    line-height: 550em;
+  }
+
+.search-wrap {
+  float: right;
+}
