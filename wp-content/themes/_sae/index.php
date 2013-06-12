@@ -13,6 +13,12 @@
 
 get_header(); ?>
 
+  <div id="top-content">
+ 
+    <?php wooslider( array( 'slider_type' => 'slides' ) ); ?>
+
+  </div><!-- /#top-content -->
+
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
 

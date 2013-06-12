@@ -11,6 +11,13 @@ a, a:link, input, textarea {
   transition: all 0.3s ease;
 }
 
+a, a:link {
+  color: #087021;
+  text-decoration: none;
+}
+
+a:hover, a:focus { text-decoration: underline; }
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'TeXGyreHerosCnBold';
   line-height: 45px;
@@ -125,8 +132,8 @@ h6 { font-size: 1.5em; }
     #site-navigation ul li a {
       color: #333;
       font-size: 1.65em;
-      line-height: 30px;
-      padding-right: 25px;
+      line-height: 35px;
+      padding: 0 10px;
       background: transparent url(../img/back-mainmenu.png) -350px 0 no-repeat;
     }
 
@@ -134,3 +141,44 @@ h6 { font-size: 1.5em; }
     #site-navigation ul li a:focus {
       background: transparent url(../img/back-mainmenu.png) 0 0 no-repeat;
     }
+
+#random-header {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* SLIDER */
+
+.page-template-page-home-php #main { padding-top: 0; }
+
+#top-content .wooslider {
+  padding: 0;
+  border: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+} 
+
+  #top-content .wooslider .slide-content { margin: 0; }
+
+  #top-content .wooslider .wooslider-control-paging { margin-top: 0 !important; }
+
+    #top-content .wooslider .wooslider-control-paging li a {
+      background: transparent url(../img/paginacion.png) 0 0 no-repeat;
+      -webkit-transition: none;
+      -moz-transition: none;
+      -o-transition: none;
+      transition: none;
+    }
+
+    #top-content .wooslider .wooslider-control-paging li a.wooslider-active { background-position: 0 -11px; }
+
+  #top-content .wooslider .wooslider-pauseplay a {
+    background: transparent url(../img/play-pause.png) 110% 0 no-repeat;
+    bottom: -20px;
+  }
+
+/* END - SLIDER */
