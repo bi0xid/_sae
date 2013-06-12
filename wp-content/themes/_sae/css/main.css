@@ -4,6 +4,13 @@ body {
   background: transparent url(../img/background.png) top left repeat-x;
 }
 
+a, a:link, input, textarea {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'TeXGyreHerosCnBold';
   line-height: 45px;
@@ -110,7 +117,7 @@ h6 { font-size: 1.5em; }
   font-family: 'TeXGyreHerosCnRegular';
   overflow: hidden;
   clear: both;
-  margin-top: 20px;
+  margin-top: 18px;
 }
 
   #site-navigation ul li {}
@@ -120,4 +127,10 @@ h6 { font-size: 1.5em; }
       font-size: 1.65em;
       line-height: 30px;
       padding-right: 25px;
+      background: transparent url(../img/back-mainmenu.png) -350px 0 no-repeat;
+    }
+
+    #site-navigation ul li a:hover,
+    #site-navigation ul li a:focus {
+      background: transparent url(../img/back-mainmenu.png) 0 0 no-repeat;
     }
