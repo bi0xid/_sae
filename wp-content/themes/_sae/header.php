@@ -47,4 +47,8 @@
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
+  <section id="random-header">
+    <img src="<?php bloginfo( 'template_url' ); ?>/img/cabecara-temporal.jpg" />
+  </section>
+
 	<div id="main" class="site-main">

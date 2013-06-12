@@ -25,7 +25,10 @@ h6 { font-size: 1.5em; }
   margin: 0 auto;
 }
 
-#masthead { overflow: hidden; }
+#masthead {
+  overflow: hidden;
+  height: 168px;
+}
 
   #masthead img.fright { margin-right: 5px; }
 
