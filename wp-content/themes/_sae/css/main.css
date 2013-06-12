@@ -11,7 +11,7 @@ a, a:link, input, textarea {
   transition: all 0.3s ease;
 }
 
-a, a:link {
+a, a:link, a:visited {
   color: #087021;
   text-decoration: none;
 }
@@ -19,7 +19,7 @@ a, a:link {
 a:hover, a:focus { text-decoration: underline; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'TeXGyreHerosCnBold';
+  font-family: 'TeXGyreHerosCnRegular';
   line-height: 45px;
   clear: none;
 }
@@ -31,10 +31,15 @@ h4 { font-size: 1.8em; }
 h5 { font-size: 1.65em; }
 h6 { font-size: 1.5em; }
 
+blockquote {
+  font: italic 1.1em/1.55em georgia;
+  color: #666;
+}
+
 .fleft { float: left; }
 .fright { float: right; }
 
-#page {
+#page, .footer-inner {
   max-width: 960px;
   margin: 0 auto;
 }
@@ -147,11 +152,18 @@ h6 { font-size: 1.5em; }
   margin-top: 20px;
 }
 
+#top-content {
+  overflow: hidden;
+  border-bottom: 1px dotted #dcdcdc;
+  margin-bottom: 25px;
+}
+
 /* SLIDER */
 
 .page-template-page-home-php #main { padding-top: 0; }
 
 #top-content .wooslider {
+  margin-bottom: 20px;
   padding: 0;
   border: none;
   -webkit-border-radius: 0;
@@ -182,3 +194,80 @@ h6 { font-size: 1.5em; }
   }
 
 /* END - SLIDER */
+
+/* POST */
+
+h1.entry-title {
+  border-bottom: 1px solid #dcdcdc;
+  line-height: 30px;
+}
+
+  h1.entry-title a {
+    color: #2b2b2b;
+    font-size: .9em;
+  }
+
+.entry-meta a {
+  color: #666;
+  font-style: italic;
+}
+
+.entry-header .entry-meta {
+  margin: 5px 0 10px 0;
+  font-style: italic;
+  color: #999;
+}
+
+.img-wrap .img-description {
+  font-style: italic;
+  color: #999;
+  text-align: right;
+}
+
+/* END - POST */
+
+#social-links p {
+  font-weight: bold;
+  margin: 20px 0 10px 0;
+}
+
+#social-links ul { margin: 0; }
+
+#social-links ul li {
+  list-style-type: none;
+  display: inline;
+}
+
+    #social-links ul li a { opacity: 1; }
+    
+    #social-links ul li a:hover,
+    #social-links ul li a:focus { opacity: 0.5; }
+
+/* FOOTER */
+
+#colophon {
+  overflow: hidden;
+  min-height: 13.0em;
+  display: block;
+  background: #575656 url(../img/logo_junta_footer.jpg) center center no-repeat;;
+  border-top: 6px solid #2b2b2b;
+}
+
+  #colophon .footer-inner {
+    margin: 25px auto;
+  }
+
+    #colophon .footer-inner p,
+    #colophon .footer-inner a { color: white; }
+
+    #colophon .footer-inner p {
+      margin: 0 0 10px 0;
+      font-weight: normal;
+    }
+
+    #colophon .footer-inner a { opacity: 1; }
+
+    #colophon .footer-inner a:hover,
+    #colophon .footer-inner a:focus { opacity: 0.5; }
+
+/* END - FOOTER */
