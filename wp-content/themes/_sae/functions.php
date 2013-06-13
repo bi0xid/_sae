@@ -34,6 +34,9 @@ function _sae_setup() {
 	 */
 	add_theme_support( 'automatic-feed-links' );
 
+	// Switches default core markup for search form to output valid HTML5.
+	add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list' ) );
+
 	/**
 	 * Enable support for Post Thumbnails on posts and pages
 	 *
@@ -141,7 +144,7 @@ add_action( 'wp_enqueue_scripts', '_sae_scripts' );
 /**
  * Implement the Custom Header feature.
  */
-//require get_template_directory() . '/inc/custom-header.php';
+require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
