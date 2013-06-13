@@ -270,4 +270,6 @@ h1.entry-title {
     #colophon .footer-inner a:hover,
     #colophon .footer-inner a:focus { opacity: 0.5; }
 
+#wpstats { display: none; }
+
 /* END - FOOTER */
