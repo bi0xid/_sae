@@ -1,4 +1,4 @@
-<?php
+<?php	 	
 /**
  * @package _SAE
  */
@@ -11,11 +11,21 @@
 		<div class="entry-meta">
 			<?php _sae_posted_on(); ?>
 		</div><!-- .entry-meta -->
+
+		<?php if ( has_post_thumbnail() ) : ?>
+    <div class="img-wrap">
+      <?php the_post_thumbnail(); ?>
+      <div class="img-description">
+        <?php echo get_post(get_post_thumbnail_id())->post_content; ?>
+      </div>
+    </div><!-- /.img-wrap -->
+    <?php endif; ?>
+
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
 		<?php the_content(); ?>
-		<?php
+		<?php	 	
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . __( 'Pages:', '_sae' ),
 				'after'  => '</div>',
@@ -24,7 +34,7 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-meta">
-		<?php
+		<?php	 	
 			/* translators: used between list items, there is a space after the comma */
 			$category_list = get_the_category_list( __( ', ', '_sae' ) );
 

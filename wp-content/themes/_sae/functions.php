@@ -1,4 +1,4 @@
-<?php
+<?php	 	
 /**
  * _SAE functions and definitions
  *
@@ -9,7 +9,7 @@
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) )
-	$content_width = 640; /* pixels */
+	$content_width = 696; /* pixels */
 
 if ( ! function_exists( '_sae_setup' ) ) :
 /**
@@ -49,6 +49,7 @@ function _sae_setup() {
 	 */
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', '_sae' ),
+		'secondary' => __( 'Secondary Menu', '_sae' ),
 	) );
 
 	/**
@@ -58,6 +59,20 @@ function _sae_setup() {
 }
 endif; // _sae_setup
 add_action( 'after_setup_theme', '_sae_setup' );
+
+
+function excerpt_read_more_link($output) {
+ global $post;
+ return $output . '<a href="'. get_permalink($post->ID) . '">Leer más...</a>';
+}
+add_filter('the_excerpt', 'excerpt_read_more_link');
+
+
+function new_excerpt_length($length) {
+    return 110;
+}
+add_filter('excerpt_length', 'new_excerpt_length');
+
 
 /**
  * Setup the WordPress core custom background feature.
@@ -105,6 +120,22 @@ function _sae_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Sidebar', '_sae' ),
 		'id'            => 'sidebar-1',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Sidebar blog', '_sae' ),
+		'id'            => 'sidebar-blog',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Sidebar pages', '_sae' ),
+		'id'            => 'sidebar-pages',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
@@ -165,4 +196,69 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+// Insertar Breadcrumb    
+function the_breadcrumb() {
+	if (!is_home()) {
+		echo '<span class="removed_link first" title="';
+		echo get_option('home');
+	        echo '">';
+	  $URL = 	get_bloginfo('home');
+		$nombre = get_bloginfo('name');
+		echo "<a href='$URL'>$nombre</a>";
+		echo "</span> » ";
+		if (is_category() || is_single()) {
+			the_category('title_li=');
+			if (is_single()) {
+				echo " » ";
+				the_title();
+			}
+		} elseif (is_page()) {
+			echo the_title();
+		}
+	}
+}    
+// fin breadcrumb
+
+function image_quality_api_init() {
+	// Add Filter
+	add_filter('jpeg_quality','100');
+
+	
+}// image_quality_api_init()
+
+add_action('admin_init', 'image_quality_api_init');
+
+
+/**
+ * @param string $tag The hook name
+ */
+function debug_filters( $tag = false ) {
+	global $wp_filter;
+
+	if ( $tag ) {
+		$hook[ $tag ] = $wp_filter[ $tag ];
+
+		if ( !is_array( $hook[ $tag ] ) ) {
+			trigger_error("Nothing found for '$tag' hook", E_USER_NOTICE);
+			return;
+		}
+	}
+	else {
+		$hook = $wp_filter;
+		ksort( $hook );
+	}
+
+	echo '<pre>';
+	foreach ( $hook as $tag => $priority ) {
+		echo "<br />&gt;&gt;&gt;&gt;&gt;\t<strong>$tag</strong><br />";
+		ksort( $priority );
+		foreach ( $priority as $priority => $function ) {
+			echo $priority;
+			foreach( $function as $name => $properties )
+				echo "\t$name<br>\n";
+		}
+	}
+	echo '</pre>';
+}
 

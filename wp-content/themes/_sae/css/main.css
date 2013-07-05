@@ -22,14 +22,42 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'TeXGyreHerosCnRegular';
   line-height: 45px;
   clear: none;
+  margin-bottom: 15px;
 }
 
-h1 { font-size: 2.25em; }
-h2 { font-size: 2.15em; }
-h3 { font-size: 2em; }
-h4 { font-size: 1.8em; }
-h5 { font-size: 1.65em; }
-h6 { font-size: 1.5em; }
+h1 {
+  font-size: 2.25em;
+  line-height: 30px;
+}
+
+h2 {
+  font-size: 2.15em;
+  line-height: 28px;
+  color: #176f3c;
+}
+
+h3 {
+  font-size: 2em;
+  line-height: 25px;
+  color: #005122;
+}
+
+h4 {
+  font-size: 1.8em;
+  line-height: 23px;
+  color: #575656;
+}
+
+h5 {
+  font-size: 1.65em;
+  line-height: 20px;
+}
+
+h6 {
+  font-size: 1.5em;
+  line-height: 18px;
+}
+
 
 blockquote {
   font: italic 1.1em/1.55em georgia;
@@ -39,40 +67,41 @@ blockquote {
 .fleft { float: left; }
 .fright { float: right; }
 
+.skip { display: none; }
+
+#page {
+  position: relative;
+}
+
+.logged-in #page {}
+
 #page, .footer-inner {
   max-width: 960px;
   margin: 0 auto;
 }
 
 #masthead {
-  overflow: hidden;
+  overflow: visible;
   height: 168px;
+  position: relative;
 }
 
   #masthead img.fright { margin-right: 5px; }
+
+  #masthead #widget-cabecera {
+    position: absolute;
+    right: 0;
+    bottom: 40px;
+  }
 
 .site-branding {
   overflow: hidden;
   float: left;
 }
 
-  .site-branding h1 { float: left; }
-
-    .site-branding h1 a {
-      display: block;
-      width: 120px;
-      height: 109px;
-      text-indent: -9999px;
-      background: transparent url(../img/logo.png) 0 0 no-repeat;
-    }
-
-  .site-branding h2 {
+  h1.site-title, h2.site-description {
     float: left;
-    width: 475px;
-    height: 92px;
-    background: transparent url(../img/logo-texto.gif) 0 0 no-repeat;
-    overflow: hidden;
-    line-height: 550em;
+    margin: 0;
   }
 
   .widget_search .submit {
@@ -112,7 +141,7 @@ blockquote {
 
 #main {
   overflow: hidden;
-  padding-top: 25px;
+  padding-top: 0;
 }
 
   #main #primary {
@@ -127,12 +156,10 @@ blockquote {
 
 #site-navigation ul {
   font-family: 'TeXGyreHerosCnRegular';
-  overflow: hidden;
+  overflow: visible;
   clear: both;
-  margin-top: 18px;
+  margin-top: 13px;
 }
-
-  #site-navigation ul li {}
 
     #site-navigation ul li a {
       color: #333;
@@ -145,11 +172,30 @@ blockquote {
     #site-navigation ul li a:hover,
     #site-navigation ul li a:focus {
       background: transparent url(../img/back-mainmenu.png) 0 0 no-repeat;
+      text-decoration: none;
     }
+
+      #site-navigation ul li ul.sub-menu {
+        background-color: #f9f9f9;
+        border: 1px solid #dcdcdc
+      }
+
+        #site-navigation ul li ul.sub-menu li a {
+          font-size: 1.15em;
+          background: none;
+          text-transform: uppercase;
+        }
+
+        #site-navigation ul li ul.sub-menu li a:hover,
+        #site-navigation ul li ul.sub-menu li a:focus {
+          background: none;
+          opacity: 0.7;
+          background: white;
+        }
 
 #random-header {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 0;
 }
 
 #top-content {
@@ -162,6 +208,8 @@ blockquote {
 
 .page-template-page-home-php #main { padding-top: 0; }
 
+body .wooslider.wooslider-type-slides img { margin-top: 0; }
+
 #top-content .wooslider {
   margin-bottom: 20px;
   padding: 0;
@@ -172,7 +220,7 @@ blockquote {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
-} 
+}
 
   #top-content .wooslider .slide-content { margin: 0; }
 
@@ -193,6 +241,10 @@ blockquote {
     bottom: -20px;
   }
 
+  #top-content .wooslider .wp-caption { border: none; }
+
+  #top-content .wooslider .wp-caption-text { display: none; }
+
 /* END - SLIDER */
 
 /* POST */
@@ -200,6 +252,7 @@ blockquote {
 h1.entry-title {
   border-bottom: 1px solid #dcdcdc;
   line-height: 30px;
+  padding-bottom: 5px;
 }
 
   h1.entry-title a {
@@ -221,10 +274,38 @@ h1.entry-title {
 .img-wrap .img-description {
   font-style: italic;
   color: #999;
-  text-align: right;
+}
+
+div.sharedaddy .sd-content { width: auto; }
+
+.footer-entry-meta {
+  clear: both;
+  margin-top: 10px;
 }
 
 /* END - POST */
+
+#content .post { overflow: hidden; }
+
+.home #content .entry-summary { margin: 0; }
+
+.img-wrap {
+  width: 45%;
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.entry-summary p { margin-bottom: 5px; }
+
+.single .img-wrap,
+.sticky .img-wrap {
+  width: 100%;
+  float: none;
+  margin: 0 0 15px 0;
+  max-height: 280px;
+  overflow: hidden;
+}
 
 #social-links p {
   font-weight: bold;
@@ -243,6 +324,15 @@ h1.entry-title {
     #social-links ul li a:hover,
     #social-links ul li a:focus { opacity: 0.5; }
 
+#breadcrub {
+  margin: 0 0 20px 0;
+  border-bottom: 1px solid #dcdcdc;
+  padding-left: 20px;
+  background: transparent url(../img/ico-home.png) left top no-repeat;
+}
+
+.home #breadcrub { display: none; }
+
 /* FOOTER */
 
 #colophon {
@@ -251,6 +341,7 @@ h1.entry-title {
   display: block;
   background: #575656 url(../img/logo_junta_footer.jpg) center center no-repeat;;
   border-top: 6px solid #2b2b2b;
+  margin-top: 40px;
 }
 
   #colophon .footer-inner {
@@ -261,7 +352,7 @@ h1.entry-title {
     #colophon .footer-inner a { color: white; }
 
     #colophon .footer-inner p {
-      margin: 0 0 10px 0;
+      margin: 0;
       font-weight: normal;
     }
 
@@ -270,6 +361,51 @@ h1.entry-title {
     #colophon .footer-inner a:hover,
     #colophon .footer-inner a:focus { opacity: 0.5; }
 
-#wpstats { display: none; } /* Statistics by WP.com */
+.form-allowed-tags,
+#wpstats { display: none; }
+
+#site-navigation-two {
+  width: 25%;
+  float: right;
+  margin-bottom: 50px;
+  margin-top: -18px;
+  clear: none;
+}
+
+.menu-menu-secundario-de-navegacion-container ul {
+  margin: 20px 0 1.5em 3em;
+  line-height: 20px;
+  list-style: disc;
+}
+
+  .menu-menu-secundario-de-navegacion-container ul li { float: none; }
+
+.footer-inner .fleft { width: 25%; }
+
+#social-links { color: white; }
+
+  #social-links ul {
+    overflow: hidden;
+    margin: 10px 0 15px 0;
+  }
+
+    #social-links ul li a.social-link {
+      width: 27px;
+      height: 28px;
+      text-indent: -9999px;
+      display: block;
+      float: left;
+      margin-right: 5px;
+    }
+
+    #social-links ul li a.tt-link { background: transparent url(../img/tt-ico.png) 0 0 no-repeat;}
+    #social-links ul li a.fb-link { background: transparent url(../img/fb-ico.png) 0 0 no-repeat;}
+    #social-links ul li a.yt-link { background: transparent url(../img/yt-ico.png) 0 0 no-repeat;}
+    #social-links ul li a.rss-link { background: transparent url(../img/rss-ico.png) 0 0 no-repeat;}
+
+
+div.sharedaddy, #content div.sharedaddy, #main div.sharedaddy {
+margin-top: 5px;
+}
 
 /* END - FOOTER */

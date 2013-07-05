@@ -1,16 +1,13 @@
 <?php	 	
-/**
- * The template for displaying all pages.
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
- *
- * @package _SAE
- */
+/*
+Template Name: HEADER-TESTING
+*/
 
 get_header(); ?>
+
+<?php debug_filters('wp_head'); ?>
+
+<?php print_r (wp_head()); ?>
 
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
@@ -30,5 +27,5 @@ get_header(); ?>
 		</div><!-- #content -->
 	</div><!-- #primary -->
 
-<?php get_sidebar('pages'); ?>
+<?php get_sidebar('blog'); ?>
 <?php get_footer(); ?>
