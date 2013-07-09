@@ -324,6 +324,10 @@ li.current-menu-item ul {
    display: block !important;
 }
 
+#main #secondary{
+  margin: 0 auto;
+}
+
 }
 
 @media screen and (max-width: 380px) {
@@ -588,6 +592,14 @@ li.current-menu-item ul {
    display: block !important;
 }
 
+.textwidget{
+  clear: both;
+}
+
+#secondary .widget {
+  float: left;
+  width: 40%;
+}
 }
 
 @media screen and (max-width: 240px) {
@@ -627,6 +639,25 @@ li.sub-menu-item {
 li.current-menu-parent ul,
 li.current-menu-item ul {
    display: block !important;
+}
+
+.textwidget {
+  clear: both;
+}
+
+div.sharedaddy, #content div.sharedaddy, #main div.sharedaddy {
+margin-top: 5px;
+margin-bottom: 10px;
+
+}
+
+.tags-links{
+  line-height: 12px;
+}
+
+#secondary .widget {
+  float: left;
+  width: 40%;
 }
 
 }

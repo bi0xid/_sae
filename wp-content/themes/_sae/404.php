@@ -18,8 +18,12 @@ get_header(); ?>
 				<div class="entry-content">
 					<p><?php	 	 _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', '_sae' ); ?></p>
 
-					<?php	 	 get_search_form(); ?>
-
+<aside id="search-3" class="widget widget_search">	<form method="get" id="searchform" class="searchform" action="http://lab.mecus.es/_sae/" role="search">
+		<label for="s" class="screen-reader-text">Buscar</label>
+		<input type="search" class="field" name="s" value="" id="s" placeholder="Buscar …">
+		<input type="submit" class="submit" id="searchsubmit" value="Buscar">
+	</form>
+</aside>
 					<?php	 	 the_widget( 'WP_Widget_Recent_Posts' ); ?>
 
 					<?php	 	 if ( _sae_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
