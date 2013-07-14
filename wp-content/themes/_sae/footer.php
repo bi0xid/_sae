@@ -12,6 +12,9 @@
 	</div><!-- #page -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
+ <!--[if lte IE 8]>
+ <div id="colophon" class="site-footer iefooter" role="contentinfo">
+ <![endif]-->
     <div class="footer-inner">
 
       <div id="widget-footer" class="widget-area fleft" role="complementary">
@@ -25,9 +28,12 @@
       </nav><!-- #site-navigation -->
       
     </div><!-- /.footer-inner -->
+  <!--[if lte IE 8]>
+  </div>
+  <![endif]-->
   </footer><!-- #colophon -->
 
-<?php	 	 wp_footer(); ?>
+<?php wp_footer(); ?>
 
 </body>
 </html>

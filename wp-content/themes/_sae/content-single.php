@@ -5,7 +5,13 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<!--[if lte IE 8]>
+<div <?php post_class(); ?>>
+<![endif]-->
 	<header class="entry-header">
+	<!--[if lte IE 8]>
+	<div class="entry-header">
+	<![endif]-->
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 
 		<div class="entry-meta">
@@ -20,7 +26,9 @@
       </div>
     </div><!-- /.img-wrap -->
     <?php endif; ?>
-
+  <!--[if lte IE 8]>
+	</div>
+	<![endif]-->
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
@@ -34,6 +42,9 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-meta">
+	<!--[if lte IE 8]>
+	<div class="entry-meta">
+	<![endif]-->
 		<?php	 	
 			/* translators: used between list items, there is a space after the comma */
 			$category_list = get_the_category_list( __( ', ', '_sae' ) );
@@ -69,5 +80,11 @@
 		?>
 
 		<?php edit_post_link( __( 'Edit', '_sae' ), '<span class="edit-link">', '</span>' ); ?>
+	<!--[if lte IE 8]>
+	</div>
+	<![endif]-->
 	</footer><!-- .entry-meta -->
+<!--[if lte IE 8]>
+</div>
+<![endif]-->
 </article><!-- #post-## -->

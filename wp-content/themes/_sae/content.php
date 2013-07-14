@@ -5,6 +5,9 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<!--[if lte IE 8]>
+<div <?php post_class(); ?>>
+<![endif]-->
 	<header class="entry-header">
     <h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 
@@ -31,6 +34,9 @@
 	</div><!-- .entry-summary -->
 	
 	<footer class="entry-meta footer-entry-meta">
+	<!--[if lte IE 8]>
+	<div class="entry-meta footer-entry-meta">
+	<![endif]-->
 		<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
 			<?php	 	
 				/* translators: used between list items, there is a space after the comma */
@@ -60,7 +66,13 @@
 		<?php endif; ?>
 
 		<?php edit_post_link( __( 'Edit', '_sae' ), '<span class="sep"> | </span><span class="edit-link">', '</span>' ); ?>
+		<!--[if lte IE 8]>
+		</div>
+		<![endif]-->
 	</footer><!-- .entry-meta -->
+<!--[if lte IE 8]>
+</div>
+<![endif]-->
 </article><!-- #post-## -->
 <script type="text/javascript">
 	$('#post-<?php the_ID(); ?>').append($('#post-<?php the_ID(); ?> .entry-summary .sharedaddy'));

@@ -104,6 +104,7 @@ blockquote {
     margin: 0;
   }
 
+  #masthead form#searchform input#searchsubmit,
   .widget_search .submit {
     display: block;
     float: left;
@@ -409,3 +410,31 @@ margin-top: 5px;
 }
 
 /* END - FOOTER */
+
+/* IE */
+
+.ie7 .screen-reader-text,
+.ie7 .skip-link, .ie8 .skip-link,
+.ie7 #masthead form#searchform label { display: none !important; }
+
+.ie7 #masthead #widget-cabecera, .ie8 #masthead #widget-cabecera { bottom: 55px; }
+
+.ie7 div.sharedaddy, .ie8 div.sharedaddy { padding-top: 20px; }
+
+.ie7 .post .footer-entry-meta, .ie8 .post .footer-entry-meta {
+  position: relative;
+  top: -70px;
+}
+
+.ie7 #colophon { border: none; }
+
+.ie7 .iefooter { border-top: 6px solid #2b2b2b !important; }
+
+.ie8 .img-wrap img {
+  width: auto;
+  max-width: 100%;
+}
+
+.ie7 ul.sub-menu { zoom: 100%; }
+
+/* END - IE */
