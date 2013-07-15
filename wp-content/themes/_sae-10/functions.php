@@ -203,8 +203,8 @@ function the_breadcrumb() {
 		echo '<span class="removed_link first" title="';
 		echo get_option('home');
 	        echo '">';
-	  $URL = 	get_bloginfo('home');
-		$nombre = get_bloginfo('name');
+	  $URL = get_bloginfo('url');
+		$nombre = get_bloginfo('url');
 		echo "<a href='$URL'>$nombre</a>";
 		echo "</span> » ";
 		if (is_category() || is_single()) {
